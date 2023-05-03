@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Tests {
     
-    public static int numOfTests = 15;
+    public static int numOfTests = 16;
     public static int numOfSuccessfulTests = 0;
 
     public static void runTests(InMemoryFileSystem fs) {
@@ -335,6 +335,19 @@ public class Tests {
         } else {
             System.out.println("Test failed");
         } 
+
+        // Test the case when no match is found
+        expectedOutput = "";
+        output = fs.findFirstMatchingRegexFile("(.*)Com(.*)", "/Classwork");
+
+        if(output.equals(expectedOutput)) {
+           System.out.println("Test is successful");
+           numOfSuccessfulTests++;
+        } else {
+            System.out.println("Test failed");
+        } 
+
+
 
     }
 
